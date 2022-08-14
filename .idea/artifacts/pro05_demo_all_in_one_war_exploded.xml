@@ -1,0 +1,26 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="pro05-demo-all-in-one:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/pro05_demo_all_in_one_war_exploded</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="pro05-demo-all-in-one" />
+          <element id="library" level="project" name="java" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: mysql:mysql-connector-java:8.0.26" />
+          <element id="library" level="project" name="Maven: com.google.protobuf:protobuf-java:3.11.4" />
+          <element id="library" level="project" name="Maven: com.alibaba:druid:1.2.8" />
+          <element id="library" level="project" name="Maven: commons-dbutils:commons-dbutils:1.6" />
+          <element id="library" level="project" name="Maven: org.thymeleaf:thymeleaf:3.0.11.RELEASE" />
+          <element id="library" level="project" name="Maven: ognl:ognl:3.1.12" />
+          <element id="library" level="project" name="Maven: org.javassist:javassist:3.20.0-GA" />
+          <element id="library" level="project" name="Maven: org.attoparser:attoparser:2.0.5.RELEASE" />
+          <element id="library" level="project" name="Maven: org.unbescape:unbescape:1.1.6.RELEASE" />
+          <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.7.25" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="pro05-demo-all-in-one/web/Web" />
+    </root>
+  </artifact>
+</component>
