@@ -26,6 +26,24 @@
         <servlet-name>portalServlet</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>authServlet</servlet-name>
+        <servlet-class>com.atguigu.imperial.court.servlet.module.AuthServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>authServlet</servlet-name>
+        <url-pattern>/auth</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>workServlet</servlet-name>
+        <servlet-class>com.atguigu.imperial.court.servlet.module.WorkServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>workServlet</servlet-name>
+        <url-pattern>/work</url-pattern>
+    </servlet-mapping>
 
     <filter>
         <filter-name>txFilter</filter-name>

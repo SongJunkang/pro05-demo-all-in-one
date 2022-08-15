@@ -30,7 +30,7 @@ public class ImperialCourtTest {
     public void testGetListBeans(){
         String sql = "select emp_id empId ,emp_name empName,emp_position empPosition,login_account loginAccount,login_password loginPassword from t_emp;";
      
-        List <Emp> empList = baseDao.getListBeans(sql,Emp.class);
+        List <Emp> empList = baseDao.getBeanList(sql,Emp.class);
         for (Emp emp :
                 empList) {
             System.out.println("emp = " + emp);

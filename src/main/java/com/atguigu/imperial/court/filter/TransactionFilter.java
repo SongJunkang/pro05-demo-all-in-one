@@ -69,6 +69,7 @@ public class TransactionFilter implements Filter {
         } catch (Exception e) {
             try {
                 //4、回滚事务
+                assert connection != null;
                 connection.rollback();
 
             } catch (SQLException ex) {

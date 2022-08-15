@@ -7,7 +7,6 @@ package com.atguigu.imperial.court.entity;
 public class Emp {
     private Integer empId;
 
-
     private String empName;
     private String empPosition;
     private String loginAccount;

@@ -23,7 +23,7 @@ public class BaseDao<T> {
 
     private QueryRunner runner = new QueryRunner();
 
-    public List<T> getListBeans(String sql, Class<T> entityClass,Object... parameters){
+    public List<T> getBeanList(String sql, Class<T> entityClass,Object... parameters){
 
         try {
             Connection connection = JDBCUtils.getConnection();
@@ -69,5 +69,6 @@ public class BaseDao<T> {
        }
 
    }
+
 }
 
