@@ -30,13 +30,30 @@ public class WorkServlet extends ModelBaseServlet {
     }
 
 
-    protected void showMemorialsDetail (HttpServletRequest request,
-                                        HttpServletResponse response) throws ServletException, IOException {
+    protected void showMemorialsDetail(HttpServletRequest request,
+                                        HttpServletResponse response)
+            throws ServletException, IOException {
         //1.从请求参数中读取memorialsId
         String memorialsId = request.getParameter("memorialsId");
 
         //2,   根据memorialsId 从service中 memorials 对象
         Memorials memorials =  memorialsService.getMemorialsDetailById(memorialsId);
+
+
+        // **********************补充功能**********************
+        // 获取当前奏折对象的状态
+        Integer memorialsStatus = memorials.getMemorialsStatus();
+
+        //判断奏折状态
+        if (memorialsStatus == 0)
+        {
+            //更新奏折状态。数据库修改，
+            memorialsService.updateMemorialsStatusToRead(memorialsId);
+            //更新奏折状态。当前对象修改。
+            memorials.setMemorialsStatus(1);
+
+        }
+
 
         //3,将memorials 对象存入请求域。
         request.setAttribute("memorials",memorials);
@@ -45,7 +62,20 @@ public class WorkServlet extends ModelBaseServlet {
         String templatetName = "memorials_detail";
 
         processTemplate(templatetName,request,response);
+    }
 
+
+    protected void feekBack(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    //获取表单提交的请求参数，
+        String memorialsId = request.getParameter("memorialsId");
+        String feedbackContent = request.getParameter("feedbackContent");
+
+        //执行更新。
+
+        memorialsService.updateMemorialsFeedBack(memorialsId,feedbackContent);
+
+        //重定向回显示奏折列表页面。
+        response.sendRedirect(request.getContextPath()+ "/work?method=showMemorialsDigestList");
 
     }
 }

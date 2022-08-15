@@ -22,9 +22,17 @@ public class MemorialsServiceImpl implements MemorialsService {
 
     @Override
     public Memorials getMemorialsDetailById(String memorialsId) {
-        //memorialsDao.s
+        return memorialsDao.selectMemorialsById(memorialsId);
 
+    }
 
-        return null;
+    @Override
+    public void updateMemorialsStatusToRead(String memorialsId) {
+        memorialsDao.updateMemorialsStatusToRead(memorialsId);
+    }
+
+    @Override
+    public void updateMemorialsFeedBack(String memorialsId, String feedbackContent) {
+        memorialsDao.updateMemorialsFeedBack(memorialsId,feedbackContent);
     }
 }
