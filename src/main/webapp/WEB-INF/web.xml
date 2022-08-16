@@ -46,6 +46,15 @@
     </servlet-mapping>
 
     <filter>
+        <filter-name>loginFilter</filter-name>
+        <filter-class>com.atguigu.imperial.court.filter.LoginFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>loginFilter</filter-name>
+        <url-pattern>/work</url-pattern>
+    </filter-mapping>
+
+    <filter>
         <filter-name>txFilter</filter-name>
         <filter-class>com.atguigu.imperial.court.filter.TransactionFilter</filter-class>
     </filter>

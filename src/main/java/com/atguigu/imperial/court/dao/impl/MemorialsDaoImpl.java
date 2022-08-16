@@ -46,7 +46,7 @@ public class MemorialsDaoImpl extends BaseDao<Memorials> implements MemorialsDao
 
     @Override
     public void updateMemorialsStatusToRead(String memorialsId) {
-        String sql = "update t_memorials set memorials_status = 1 where memorialsId = ?";
+        String sql = "update t_memorials set memorials_status = 1 where memorials_id = ?";
 
 
         //update(sql,Memorials.class,memorialsId);
@@ -57,11 +57,10 @@ public class MemorialsDaoImpl extends BaseDao<Memorials> implements MemorialsDao
     @Override
     public void updateMemorialsFeedBack(String memorialsId, String feedbackContent) {
 
-        String feedback_time = new SimpleDateFormat("yyyy-mm-dd").format(new Date());
+        String feedbackTime = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
 
-        String sql = "update t_memorials set memorials_status = 2,feedback_content = ? " +
-                ",feedback_time = ? where memorials_id = ? ";
-        update(sql,feedbackContent,feedback_time,memorialsId);
+        String sql = "update t_memorials set memorials_status=2,feedback_content=?,feedback_time=? where memorials_id=?";
 
+        update(sql, feedbackContent, feedbackTime, memorialsId);
     }
 }
